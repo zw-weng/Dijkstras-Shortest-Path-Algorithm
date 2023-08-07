@@ -1,2 +1,3 @@
-# Draw.IO Project
-- All project done with draw.io will be stored in here, eg. UML diagram
+## Discrete Structure
+### Dijkstra’s Shortest Path Algorithm
+- Scribing for Dijkstra’s Shortest Path Algorithm has been done using LaTeX coding via Overleaf.
