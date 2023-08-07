@@ -1,0 +1,178 @@
+\section{Purpose \& Use}
+\begin{itemize}
+    \item Find the shortest path between nodes in a graph.
+    \item Used in GPS devices to determine the shortest path between the current location and the desired destination.
+    \item It has broad applications in industry, especially in domains that require modelling networks.
+\end{itemize}
+\includegraphics[width10=cm, height=5cm]{figures/shortest-subpath.png}
+
+
+\section{Basics of Dijkstra's Algorithm}
+\begin{itemize}
+    \item Dijkstra's Algorithm basically starts at the node that you choose (the source node) and it analyzes the graph to find the shortest path between that node and all the other nodes in the graph.
+    \item The algorithm keeps track of the currently known shortest distance from each node to the source node and it updates these values if it finds a shorter path.
+    \item Once the algorithm has found the shortest path between the source node and another node, that node is marked as "visited" and added to the path.
+    \item The process continues until all the nodes in the graph have been added to the path. This way, we have a path that connects the source node to all other nodes following the shortest path possible to reach each node.
+\end{itemize}
+\includegraphics[width=8cm, height=5cm]{figures/figure-1.jpg}
+
+
+\section{Shortest Path Problem}
+\begin{itemize}
+    \item \textbf{1}: Let G be a weighted graph.
+    \item \textbf{2}: Let u and v be two vertices in G.
+    \item \textbf{3}: Let P be a path in G from u to v.
+    \item \textbf{4}: L(P) is the length of path P which is the sum of the weights of all the edges on path P.
+    \item \textbf{5}: The shortest path from a vertex to another vertex is a path with the shortest length between the vertices.
+\end{itemize}
+
+
+\section{Dijkstra's Shortest Path Algorithm}
+\includegraphics[width=8cm, height=5cm]{figures/2023-01-21.png}\par
+\textbf{i. } $S = \varnothing\par$
+\textbf{ii. } $N = V\par$
+\textbf{iii. } For\ all\ vertices,\ $u \in V,\ u \neq a,\ L(u) = \infty\par$
+\textbf{iv. } $L(a) = 0\par$
+\textbf{v. }While\ $z \notin S$,\ do:\par 
+\begin{itemize}
+    \item Let $v \in N$ \ be\ such\ that\ $L(v) = min\{L(u)|u\in N\}$
+    \item $S = S \cup\{v\}$
+    \item $N = N-\{v\}$
+    \item For all $w \in N$\ such\ that\ there\ is\ an\ edge\ from\ v\ to\ w:\par
+    \begin{itemize}
+        \item If L(v) + W[v,w] < L(w), then L(w) = L(v) + W[v,w]
+    \end{itemize}
+\end{itemize}
+
+
+\section{Example 1}
+\includegraphics[width=8cm, height=5cm]{figures/2023-01-21.png}\par
+Find the shortest path and distance from vertex a to vertex z.\par
+
+\subsection{Solution 1}
+    \textbf{\textit{Step 1:}}\par
+    \includegraphics[width=8cm, height=5cm]{figures/2023-01-21 (1).png}\par
+    \newpage
+    \textbf{\textit{Step 2:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (2).png}\par
+    \textbf{\textit{Step 3:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (3).png}\par
+    \textbf{\textit{Step 4:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (4).png}\par
+    \textbf{\textit{Step 5:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (5).png}\par
+    \textbf{\textit{Step 6:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (6).png}\par
+    \textbf{\textit{Step 7:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (7).png}\par
+    \textbf{\textit{Step 8:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (8).png}\par
+    \textbf{\textit{Step 9:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (9).png}\par
+    \textbf{\textit{Step 10:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (10).png}\par
+    \textbf{\textit{Step 11:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (11).png}\par
+    \textbf{\textit{Step 12:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (12).png}\par
+    \textbf{\textit{Step 13:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (13).png}\par
+    \textbf{\textit{Step 14:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (14).png}\par
+    \textbf{\textit{Step 15:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (15).png}\par
+    \textbf{\textit{Step 16:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (16).png}\par
+    \textbf{\textit{Step 17:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (17).png}\par
+    \textbf{\textit{Step 18:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (18).png}\par
+    \textbf{\textit{Step 19:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (19).png}\par
+    \textbf{\textit{Step 20:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (20).png}\par
+    \textbf{\textit{Step 21:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (21).png}\par
+    \textbf{\textit{Step 22:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (22).png}\par
+    \textbf{\textit{Step 23:}}\par
+    \includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (25).png}\par
+    \ \par
+\textbf{\textit{Answer:}}\par
+\textbf{Shortest Path: }a, v2, z.\par
+\textbf{Shortest Distance: }13\par
+\includegraphics[width=8cm, height=5cm]{figures/2023-01-21 (24).png}
+
+
+\newpage
+\subsection{Table 1}
+Table below is as the example 1 above.
+\begin{table}[ht]
+\caption{Dijkstra's Algorithm Table 1} % title of Table
+\centering % used for centering table
+\begin{tabular}{c c c c c c c c c c c} % centered columns (11 columns)
+\hline\hline %inserts double horizontal lines
+Iteration & S & N & L(a) & L(v1) & L(v2) & L(v3) & L(v4) & L(v5) & L(v6) & L(z) \\ [0.02ex] % inserts table
+%heading
+\hline % inserts single horizontal line
+0 & \emptyset & \{a,v1,v2,v3,v4, & 0 & \infty & \infty & \infty & \infty & \infty & \infty & \infty\\ % inserting body of the table
+\ & \  & v5,v6,z\}\\
+1 & \{a\} & \{v1,v2,v3,v4,v5, & \  & 3 & 4 & \infty & 15 & \infty & \infty & \infty \\
+\ & \ & v6,z\} \\
+2 & \{a,v1\} & \{v2,v3,v4,v5 & \ & 3 & 4 & 10 & 9 & \infty & \infty & \infty \\
+\ & \ & v6,z\} \\
+3 & \{a,v1,v2\} & \{v3,v4,v5,v6,z\} & \ & \ & 4 & 10 & 9 & 8 & \infty & 13 \\
+4 & \{a,v1,v2,v5\} & \{v3,v4,v6,z\} & \ & \ & \ & 10 & 9 & 8 & \infty & 13 \\
+5 & \{a,v1,v2, & \{v3,v6,z\} & \ & \ & \ & 10 & 9 & \ & 16 & 13 \\
+\ & v5,v4\} \\
+6 & \{a,v1,v2, & \{v6,z\} & \ & \ & \ & 10 & \ & \ & 14 & 13 \\
+\ & v5,v4,v3\} \\
+7 & \{a,v1,v2, & \{v6\} & \ & \ & \ & \ & \ & \ & 14 & 13 \\ 
+\ & v5,v4,v4,z\} \\
+[0.5ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:example 1} % is used to refer this table in the text
+\end{table}
+
+
+\section{Example 2}
+\includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (29).png}\par
+
+\subsection{Table 2}
+Table below is as example 2 above.
+\begin{table}[ht]
+\caption{Dijkstra's Algorithm Table 2} % title of Table
+\centering % used for centering table
+\begin{tabular}{c c c c c c c c c c c} % centered columns (11 columns)
+\hline\hline %inserts double horizontal lines
+i & S & N & L(a) & L(b) & L(c) & L(d) & L(e) & L(f) & L(g) & L(z) \\ [0.02ex] % inserts table
+%heading
+\hline % inserts single horizontal line
+0 & \emptyset & \{a,b,c,d,e,f,g,z\} & 0 & \infty & \infty & \infty & \infty & \infty & \infty & \infty \\ % inserting body of the table
+1 & \{a\} & \{b,c,d,e,f,g,z\} & 0 & 2 & \infty & \infty & \infty & 1 & \infty & \infty \\
+2 & \{a,f\} & \{b,c,d,e,g,z\} & 0 & 2 & \infty & 4 & \infty & 1 & 6 & \infty \\
+3 & \{a,b,f\} & \{c,d,e,g,z\} & 0 & 2 & 4 & 4 & 6 & 1 & 6 & \infty \\
+4 & \{a,b,c,f\} & \{d,e,g,z\} & 0 & 2 & 4 & 4 & 6 & 1 & 6 & 5 \\
+5 & \{a,b,c,d,f\} & \{e,g,z\} & 0 & 2 & 4 & 4 & 6 & 1 & 6 & 5 \\
+6 & \{a,b,c,d,f,z\} & \{e,g\} & 0 & 2 & 4 & 4 & 6 & 1 & 6 & 5 \\
+\\
+[0.5ex] % [1ex] adds vertical space
+\hline %inserts single line
+\end{tabular}
+\label{table:example 2} % is used to refer this table in the text
+\end{table}
+
+\subsection{Solution 2}
+\includegraphics[width=8cm, height=6cm]{figures/2023-01-21 (31).png}\par
+\textbf{\textit{Answer:}}\par
+\textbf{Shortest Path: }a, b, c, z\ \textbf{Length of Shortest Path: }5
+
+\section{Summary}
+\begin{itemize}
+    \item Dijkstra's Algorithm finds the shortest path between a given node (which is called the "source node") and all other nodes in a graph.
+    \item This algorithm uses the weights of the edges to find the path that minimizes the total distance (weight) between the source node and all other nodes.
+\end{itemize}
+
+
+\curinstructor{Dr Tarmizi}
